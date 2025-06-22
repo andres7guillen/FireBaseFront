@@ -12,6 +12,7 @@
   <table class="table table-dark table-hover mt-3">
     <thead>
       <tr>
+        <th scope="col">#</th>
         <th>Nombre</th>
         <th>Apellido</th>
         <th>Edad</th>
@@ -20,7 +21,8 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let student of students">
+      <tr *ngFor="let student of students; let i = index">
+        <td>{{i + 1}}</td>
         <td>{{ student.name }}</td>
         <td>{{ student.lastName }}</td>
         <td>{{ student.age }}</td>

@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StudentDeleteComponent } from './components/student-delete/student-delete.component';
+import { TimeTranslatePipe } from './pipes/timne-translate.pipe';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { StudentDeleteComponent } from './components/student-delete/student-dele
     StudentDetailComponent,
     StudentEditComponent,
     StudentDeleteComponent,
-    StudentFilterComponent
+    StudentFilterComponent,
+    TimeTranslatePipe
   ],
   imports: [
     BrowserModule,
