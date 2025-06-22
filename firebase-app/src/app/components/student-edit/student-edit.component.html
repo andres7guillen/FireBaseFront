@@ -1,0 +1,73 @@
+<div class="container mt-4 bg-dark text-light p-4 rounded">
+  <h3>Editar Estudiante</h3>
+
+  <div *ngIf="isLoading" class="alert alert-info">Cargando estudiante...</div>
+  <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
+  <form [formGroup]="studentForm" (ngSubmit)="onSubmit()" *ngIf="!isLoading && !errorMessage">
+    <div class="mb-3">
+      <label for="name" class="form-label">Nombre</label>
+      <input type="text" id="name" class="form-control" formControlName="name">
+    </div>
+
+    <div class="mb-3">
+      <label for="lastName" class="form-label">Apellido</label>
+      <input type="text" id="lastName" class="form-control" formControlName="lastName">
+    </div>
+
+    <div class="mb-3">
+      <label for="age" class="form-label">Edad</label>
+      <input type="number" id="age" class="form-control" formControlName="age">
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Correo</label>
+      <input type="email" id="email" class="form-control" formControlName="email">
+    </div>
+
+    <div class="mb-3">
+      <label for="phone" class="form-label">Teléfono</label>
+      <input type="text" id="phone" class="form-control" formControlName="phone">
+    </div>
+
+    <div class="mb-3">
+      <label for="address" class="form-label">Dirección</label>
+      <input type="text" id="address" class="form-control" formControlName="address">
+    </div>
+
+    <div class="mb-3">
+      <label for="university" class="form-label">Universidad</label>
+      <input type="text" id="university" class="form-control" formControlName="university">
+    </div>
+
+    <div class="mb-3">
+      <label for="semester" class="form-label">Semestre</label>
+      <input type="text" id="semester" class="form-control" formControlName="semester">
+    </div>
+
+    <div class="mb-3">
+      <label for="time" class="form-label">Jornada</label>
+      <select id="time" class="form-select" formControlName="time">
+        <option value="">Seleccione</option>
+        <option value="DayTime">Diurna</option>
+        <option value="FullTime">Tiempo completo</option>
+        <option value="NightTime">Nocturna</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="gender" class="form-label">Género</label>
+      <select id="gender" class="form-select" formControlName="gender">
+        <option value="">Seleccione</option>
+        <option value="Female">Femenino</option>
+        <option value="Male">Masculino</option>
+        <option value="Other">Otro</option>
+      </select>
+    </div>
+
+    <div class="d-flex justify-content-between">
+      <button type="submit" class="btn btn-success" [disabled]="studentForm.invalid">Guardar</button>
+      <button type="button" class="btn btn-secondary" (click)="cancel()">Cancelar</button>
+    </div>
+  </form>
+</div>
