@@ -3,16 +3,16 @@
 
   <div *ngIf="student; else loadingOrError">
     <ul class="list-group list-group-flush">
-      <li class="list-group-item bg-dark text-light"><strong>Nombre:</strong> {{ student.name }}</li>
-      <li class="list-group-item bg-dark text-light"><strong>Apellido:</strong> {{ student.lastName }}</li>
-      <li class="list-group-item bg-dark text-light"><strong>Edad:</strong> {{ student.age }}</li>
-      <li class="list-group-item bg-dark text-light"><strong>Email:</strong> {{ student.email }}</li>
-      <li class="list-group-item bg-dark text-light"><strong>Teléfono:</strong> {{ student.phone }}</li>
-      <li class="list-group-item bg-dark text-light"><strong>Dirección:</strong> {{ student.address }}</li>
-      <li class="list-group-item bg-dark text-light"><strong>Universidad:</strong> {{ student.university }}</li>
-      <li class="list-group-item bg-dark text-light"><strong>Semestre:</strong> {{ student.semester }}</li>
-      <li class="list-group-item bg-dark text-light"><strong>Jornada:</strong> {{ student.time }}</li>
-      <li class="list-group-item bg-dark text-light"><strong>Género:</strong> {{ student.gender }}</li>
+      <li class="list-group-item bg-dark text-light"><strong>Nombre:</strong> {{ student!.name }}</li>
+      <li class="list-group-item bg-dark text-light"><strong>Apellido:</strong> {{ student!.lastName }}</li>
+      <li class="list-group-item bg-dark text-light"><strong>Edad:</strong> {{ student!.age }}</li>
+      <li class="list-group-item bg-dark text-light"><strong>Email:</strong> {{ student!.email }}</li>
+      <li class="list-group-item bg-dark text-light"><strong>Teléfono:</strong> {{ student!.phone }}</li>
+      <li class="list-group-item bg-dark text-light"><strong>Dirección:</strong> {{ student!.address }}</li>
+      <li class="list-group-item bg-dark text-light"><strong>Universidad:</strong> {{ student!.university }}</li>
+      <li class="list-group-item bg-dark text-light"><strong>Semestre:</strong> {{ student!.semester }}</li>
+      <li class="list-group-item bg-dark text-light"><strong>Jornada:</strong> {{ student!.time | timeTranslate }} </li>
+      <li class="list-group-item bg-dark text-light"><strong>Género:</strong> {{ student!.gender }}</li>
     </ul>
     <button class="btn btn-secondary mt-3" routerLink="/students">Volver al Listado</button>
   </div>
